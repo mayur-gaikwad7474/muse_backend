@@ -20,7 +20,7 @@ router.post('/upload', upload.single('element'), async (req, res) => {
                 message: "file not found"
             })
         } else {
-            req.body.url = "http://localhost:4001/muse/svg/" + req.file.filename
+            req.body.url = "https://muse.creatosaurus.io/muse/svg/" + req.file.filename
             const data = await svg.create(req.body)
             return res.status(201).json({
                 message: data

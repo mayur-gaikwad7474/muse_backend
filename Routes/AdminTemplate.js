@@ -9,7 +9,7 @@ router.post('/admin/create/template', async (req, res) => {
         const unique = Date.now()
         const base64Data = req.body.imageData.replace(/^data:image\/jpeg;base64,/, "");
         const fileName = "./TemplateImages/" + unique + ".jpeg"
-        req.body.image_url = "http://localhost:4001/muse/admin/images/" + unique + ".jpeg"
+        req.body.image_url = "http://muse.creatosaurus.io/muse/admin/images/" + unique + ".jpeg"
         fs.writeFile(fileName, base64Data, 'base64', (error) => {
             if (error) {
                 res.status(500).json({
