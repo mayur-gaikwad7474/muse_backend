@@ -26,6 +26,6 @@ app.use('/muse',require('./Routes/AdminTemplate'))
 app.use('/muse/svg',require('./Routes/Svg'))
 
 // run the app
-app.listen(4001 || process.env.PORT, () => {
-    console.log("listening on port 4001")
+app.listen(4003 || process.env.PORT, () => {
+    console.log("listening on port 4003")
 })
