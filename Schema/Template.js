@@ -5,6 +5,10 @@ const Template = new schema({
     user_email: {
         type: String
     },
+    design_id:{
+        type: String,
+        trim: true
+    },
     design_name: {
         type: String,
         trim: true
