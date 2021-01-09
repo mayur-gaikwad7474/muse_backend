@@ -28,6 +28,8 @@ app.use(compression())
 app.use('/muse', require('./Routes/Template'))
 app.use('/muse', require('./Routes/AdminTemplate'))
 app.use('/muse/svg', require('./Routes/Svg'))
+app.use('/muse/user', require('./Routes/Useruploads'))
+
 
 const server = http.createServer(app)
 const io = socketio(server)
