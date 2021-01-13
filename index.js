@@ -64,7 +64,7 @@ io.on('connection', socket => {
                 data.save()
             }
         } catch (error) {
-
+           console.log(error)
         }
     })
 })
