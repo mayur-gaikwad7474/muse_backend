@@ -23,7 +23,7 @@ router.post('/upload/image', upload.single('image'), async (req, res) => {
             })
         } else {
             req.body.file_name = req.file.filename
-            req.body.url = "http://localhost:4003/muse/user/image/" + req.file.filename
+            req.body.url = "https://muse.creatosaurus.io/muse/user/image/" + req.file.filename
             const data = await images.create(req.body)
             res.send(data)
         }
@@ -47,6 +47,17 @@ router.get('/image/:fileName', async (req, res) => {
 router.get('/images/:id', async (req, res) => {
     try {
        const data = await images.find({ user_id: req.params.id })
+       res.send(data)
+    } catch (error) {
+        res.status(500).json({
+            error: error
+        })
+    }
+})
+
+router.get('/images/find/all', async (req, res) => {
+    try {
+       const data = await images.find({})
        res.send(data)
     } catch (error) {
         res.status(500).json({

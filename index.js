@@ -44,7 +44,7 @@ io.on('connection', socket => {
                 const unique = Date.now()
                 const base64Data = msg.imageData.replace(/^data:image\/jpeg;base64,/, "");
                 const fileName = "./Images/" + unique + ".jpeg"
-                msg.image_url = "http://localhost:4003/muse/images/" + unique + ".jpeg"
+                msg.image_url = "https://muse.creatosaurus.io/muse/user/image/" + unique + ".jpeg"
                 fs.writeFile(fileName, base64Data, 'base64', (error) => {
                     if (error) {
                         console.log(error)
